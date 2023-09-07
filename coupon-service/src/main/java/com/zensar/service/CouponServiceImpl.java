@@ -18,13 +18,21 @@ public class CouponServiceImpl implements CouponService {
 	@Autowired
 	private ModelMapper modelMapper;
 
+	/*
+	 * @Override public CouponDto getCoupon(int couponId) { Coupon coupon =
+	 * couponRepository.findById(couponId).get(); // CouponDto dto=mapToDto(coupon);
+	 * return modelMapper.map(coupon, CouponDto.class);
+	 * 
+	 * }
+	 */
+	
 	@Override
-	public CouponDto getCoupon(int couponId) {
-		Coupon coupon = couponRepository.findById(couponId).get();
-		// CouponDto dto=mapToDto(coupon);
+	public CouponDto getCoupon(String couponCode) { 
+		Coupon coupon =couponRepository.findByCouponCode(couponCode); // CouponDto dto=mapToDto(coupon);
 		return modelMapper.map(coupon, CouponDto.class);
-
 	}
+	
+	
 
 	@Override
 	public List<CouponDto> getAllCoupons() {

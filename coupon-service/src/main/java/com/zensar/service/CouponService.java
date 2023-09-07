@@ -9,7 +9,7 @@ import com.zensar.entity.Coupon;
 
 public interface CouponService {
 	
-	public CouponDto getCoupon(int couponId);
+	public CouponDto getCoupon(String couponCode);
 	public List<CouponDto> getAllCoupons();
 	public void updateCouponId(int couponId, CouponDto couponDto);
 	public CouponDto insertCoupon(CouponDto couponDto);

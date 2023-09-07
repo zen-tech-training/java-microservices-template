@@ -24,9 +24,15 @@ public class Controller {
 	@Autowired
 	private CouponService couponService;
 
-	@GetMapping("/coupons/{couponId}")
-	public ResponseEntity<CouponDto> getCoupon(@PathVariable("couponId") int couponId) {
-		return new ResponseEntity(couponService.getCoupon(couponId),HttpStatus.OK);
+	/*
+	 * @GetMapping("/coupons/{couponId}") public ResponseEntity<CouponDto>
+	 * getCoupon(@PathVariable("couponId") int couponId) { return new
+	 * ResponseEntity(couponService.getCoupon(couponId),HttpStatus.OK); }
+	 */
+	
+	@GetMapping("/coupons/{couponCode}")
+	public ResponseEntity<CouponDto> getCoupon(@PathVariable("couponCode") String couponCode) {
+		return new ResponseEntity(couponService.getCoupon(couponCode),HttpStatus.OK);
 	}
 
 	@GetMapping("/coupons")
