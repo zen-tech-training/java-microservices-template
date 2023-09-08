@@ -31,7 +31,9 @@ public class ProductController {
 		String couponCode = product.getCouponCode();
 		
 		
-		ResponseEntity<CouponDto> responseEntity = restTemplate.getForEntity("http://localhost:8585/coupon-api/coupons/"+couponCode, CouponDto.class);
+		//ResponseEntity<CouponDto> responseEntity = restTemplate.getForEntity("http://localhost:8585/coupon-api/coupons/"+couponCode, CouponDto.class);
+		
+		ResponseEntity<CouponDto> responseEntity = restTemplate.getForEntity("http://COUPON-SERVICE/coupon-api/coupons/"+couponCode, CouponDto.class);
 		
 		CouponDto couponDto=responseEntity.getBody();
 		
